@@ -46,7 +46,6 @@ body {
 }
 
 .product-card__type {
-  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -56,15 +55,13 @@ body {
 }
 
 .product-card__title {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 27px;
-  font-weight: bold;
+  font-weight: 700;
   color: #515076;
 }
 
 .product-card__desc {
-  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -73,7 +70,6 @@ body {
 }
 
 .product-card__composition-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -83,7 +79,6 @@ body {
 }
 
 .product-card__composition-list {
-  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -98,15 +93,15 @@ body {
   justify-content: space-between;
   align-items: baseline;
 }
+
 .product-card__price-label {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: bold;
   color: #515076;
 }
+
 .product-card__price-value {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;
