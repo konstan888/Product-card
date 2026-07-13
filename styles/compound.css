@@ -1,0 +1,17 @@
+.products-card__compound-title {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-top: 15px;
+  color: #515076;
+}
+
+.products-card__compound-list {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #515076;
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0;
+}
