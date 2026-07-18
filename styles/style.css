@@ -1,6 +1,7 @@
+
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,16 +9,10 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/Montserrat-Bold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -26,36 +21,42 @@ body {
   line-height: 18px;
 }
 
-.page {
-  padding: 24px;
-}
-
-.page__content {
-  max-width: 1110px;
-  margin: 0 auto;
-  background-image: url("img/bg-flowers.png");
-  background-repeat: no-repeat;
-  background-position: left top; 
-  background-size: 850px auto
-}
-
 .products {
+  margin-top: 220px;
   padding-top: 220px;
+  padding-bottom: 110px;
+  background-image: url("../img/bg-flowers.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 790px 697px;
 }
 
-.page__title {
+.products__title {
   font-size: 70px;
   line-height: 78px;
   font-weight: 400;
   margin: 0 0 110px;
+  font-size: 70px;
+  line-height: 78px;
+  font-weight: 400;
   text-align: center;
   color: #515076;
+  background-image: url("../img/bg-flowers.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 790px 697px;
 }
 
-.product-list {
+.page__content {
+  background-position: 0 0;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.products-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +64,7 @@ body {
   justify-content: center;
 }
 
-.product-card {
+.products-card {
   width: 340px;
   padding: 25px;
   background: #F7F7FA;
@@ -71,30 +72,30 @@ body {
   flex-direction: column;
 }
 
-.product-card__img {
+.products-card__img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.product-card__type {
+.products-card__type {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
   margin-top: 30px;
-  margin-bottom: 5px;
   color: #A5A3B9;
 }
 
-.product-card__title {
+.products-card__name {
   font-size: 20px;
   line-height: 27px;
   font-weight: 700;
   color: #515076;
+  margin-top: 5px;
 }
 
-.product-card__desc {
+.products-card__desc {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -102,42 +103,41 @@ body {
   color: #515076;
 }
 
-.product-card__composition-title {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: #515076;
-}
-
-.product-card__composition-list {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  color: #515076;
-}
-
-.product-card__price {
-  margin-top: auto;
-  padding-top: 25px;
+.products-card__price {
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.product-card__price-label {
+.products-card__price-label {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   color: #515076;
 }
 
-.product-card__price-value {
+.products-card__price-value {
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;
   color: #515076;
 }
+
+.products-card__compound-title {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-top: 15px;
+  color: #515076;
+}
+
+.products-card__compound-list {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #515076;
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0;
+} 
