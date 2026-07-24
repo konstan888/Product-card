@@ -21,7 +21,7 @@ body {
   line-height: 18px;
 }
 
-.products {
+.product {
   margin-top: 220px;
   padding-top: 220px;
   padding-bottom: 110px;
@@ -31,7 +31,7 @@ body {
   background-size: 790px 697px;
 }
 
-.products__title {
+.product__title {
   font-size: 70px;
   line-height: 78px;
   font-weight: 400;
@@ -53,7 +53,7 @@ body {
   margin: 0 auto;
 }
 
-.products-list {
+.product__list {
   list-style: none;
   margin: 0;
   padding: 0px;
@@ -64,7 +64,7 @@ body {
   justify-content: center;
 }
 
-.products-card {
+.product-card {
   width: 340px;
   padding: 25px;
   background: #F7F7FA;
@@ -72,13 +72,13 @@ body {
   flex-direction: column;
 }
 
-.products-card__img {
+.product-card__img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.products-card__type {
+.product-card__type {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 24px;
@@ -87,7 +87,7 @@ body {
   color: #A5A3B9;
 }
 
-.products-card__name {
+.product-card__name {
   font-size: 20px;
   line-height: 27px;
   font-weight: 700;
@@ -95,7 +95,7 @@ body {
   margin-top: 5px;
 }
 
-.products-card__desc {
+.product-card__desc {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -103,28 +103,32 @@ body {
   color: #515076;
 }
 
-.products-card__price {
+.product-card__price {
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.products-card__price-label {
+.product-card__price-label {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   color: #515076;
 }
 
-.products-card__price-value {
+.product-card__price-value {
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;
   color: #515076;
 }
 
-.products-card__compound-title {
+.product-card__compound {
+  margin-top: 15px;
+}
+
+.compound__title {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -132,7 +136,7 @@ body {
   color: #515076;
 }
 
-.products-card__compound-list {
+.compound__list {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -141,3 +145,13 @@ body {
   padding-left: 18px;
   margin: 0;
 } 
+
+.toggle-button{
+  background: #bb1057;
+  color: #c8f018;
+}
+
+.toggle-button_active{
+  background: #66CDAA;
+  color: #000;
+}
