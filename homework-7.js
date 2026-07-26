@@ -4,11 +4,11 @@
 
 let city = 'Медина';
 let temp = 30;
-function checkWeather(city, temp) {
+function showWeather(city, temp) {
   console.log(`Сейчас в ${city} температура - ${temp} градусов.`);
 }
 
-checkWeather(city, temp);
+showWeather(city, temp);
 
 
 //* Проверка скорости света
@@ -45,11 +45,11 @@ buyProduct(500);
 
 //* функция  и три переменные
 
-function welcomeUser(name) {
+function greetUser(name) {
   console.log(`Ас саляму аляйкум, ${name}!`);
 }
 
-welcomeUser('Ахы');
+greetUser('Ахы');
 
 const userName = 'Касим';
 const age = 32;
