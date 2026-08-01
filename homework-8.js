@@ -90,12 +90,16 @@ weapons.push
     year: 1961,
   });
 
+//* 9. Создание массива по критерию страны-производителя оружия.
+
 const usaWeapons = [
   { name: 'M16', country: 'USA', caliber: 5.56, year: 1960 },
   { name: 'M4', country: 'USA', caliber: 5.56, year: 1994 },
 ];
 
 const allWeapons = weapons.concat(usaWeapons);
+
+//* 10. Маркировка редких оружий (до 1950 года)
 
 function markRareWeapons(weapons) {
   return weapons.map((weapon) => {
