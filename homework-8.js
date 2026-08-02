@@ -97,14 +97,13 @@ const usaWeapons = [
   { name: 'M4', country: 'USA', caliber: 5.56, year: 1994 },
 ];
 
-const allWeapons = weapons.concat(usaWeapons);
+const allWeapons = [...weapons, ...usaWeapons];
 
 //* 10. Маркировка редких оружий (до 1950 года)
 
-function markRareWeapons(weapons) {
+function getWeaponsWithRarity(weapons) {
   return weapons.map((weapon) => {
     const isRare = weapon.year < 1950;
-
     return {
       ...weapon,
       isRare: isRare,
@@ -112,5 +111,5 @@ function markRareWeapons(weapons) {
   });
 }
 
-const weaponsWithRare = markRareWeapons(allWeapons);
-console.log(weaponsWithRare);
+const weaponsWithRarity = getWeaponsWithRarity(allWeapons);
+console.log(weaponsWithRarity);
