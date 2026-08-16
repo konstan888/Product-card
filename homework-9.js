@@ -77,11 +77,10 @@ console.log(emailsByMap);
 // 12. Переборка массива с прошлого пункта и приведение его к строке.
 
 //  toString
-const emailsList1 = emailsByMap.toString();
-console.log(emailsList1);
+const emailsList = emailsByMap.toString();
+console.log(emailsList);
 
 // join
-const emailsList2 = emailsByMap.map(user => user.email);
 const emailsString = emailsByMap.join(", ");
 console.log(emailsString);
 
