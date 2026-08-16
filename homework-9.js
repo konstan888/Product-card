@@ -1,3 +1,7 @@
+//Импорт переменных
+
+import { usersData } from "./comments.js";
+
 // 1. Создал файл homework-9.js и подключил его к index.html.
 
 //  2. Создание массива чисел от 1 до 10. Фильтрация от 5 и выше. Вывод в консоль.
@@ -14,21 +18,15 @@ console.log(hasHandgun);
 
 // 4. Создание функции, переворачивающей массив 
 
-function getReversedArray(arr) {
-  return [...arr].reverse();
-}
-
-const reversedNums = getReversedArray(nums);
-const reversedWeapons = getReversedArray(weapons);
+const reverseArray = arr => ...arr.reverse();
+const reversedNums = reverseArray(nums);
+const reversedWeapons = reverseArray(weapons);
 
 console.log(reversedNums);
 console.log(reversedWeapons);
 
-// Импорт переменной из comments.js
 
 // 7. Вывод в консоль массива комментов пользователей, почта которых содержит ".com"
-
-import { usersData } from "./comments.js";
 
 const specialBodies = usersData.filter(user => user.email.includes('.com'))
   .map(user => user.body);
@@ -36,12 +34,10 @@ console.log(specialBodies);
 
 // 8. Переборка импортированного массива по id 
 
-const specialKeys = usersData.map(key => {
-  if (key.id <= 5) {
-    return { ...key, postId: 2 };
-  }
-  return { ...key, postId: 1 };
-});
+const specialKeys = usersData.map(key => ({
+  ...key,
+  postId: key.id <= 5 ? 2 : 1
+}));
 console.log(specialKeys);
 
 // 9. Переборка массива, чтоб объекты состояли только из id и имени.
@@ -55,18 +51,9 @@ console.log(idWithName);
 
 // 10. Переборка массива, добавление свойств и проверка соответствия критерию длины.
 
-   //длинный способ
-const newProperty = usersData.map(user => {
-  if (user.body.length > 180) {
-    return { ...user, isInvalid: true };
-  } else {
-    return { ...user, isInvalid: false };
-  }
-});
-   // короткий вариант, вернуть сразу.
-const longComments = usersData.map(user => ({
+const newProperty = usersData.map(user => ({
   ...user,
-  isInvalid: user.body.length > 180
+  isInvalid: user.body.length > 180 ? true : false
 }));
 
 // 11. Возврат нового массива, сотоящего из почт, с помощью Map.
@@ -83,4 +70,3 @@ console.log(emailsList1);
 // join
 const emailsList2 = emailsByMap.join(", ");
 console.log(emailsList2);
-
