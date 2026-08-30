@@ -18,7 +18,7 @@ console.log(hasHandgun);
 
 // 4. Создание функции, переворачивающей массив 
 
-const reverseArray = arr => ...arr.reverse();
+const reverseArray = arr => arr.reverse();
 const reversedNums = reverseArray(nums);
 const reversedWeapons = reverseArray(weapons);
 
