@@ -3,9 +3,9 @@ import { products } from "./products-data.js";
 const productTemplate = document.getElementById("product-card-template"); 
 const productList = document.querySelector(".product__list"); 
 const productInfo = products.reduce((acc, product) => {
-  acc[product.name] = product.desc;    
+  acc.push({ [product.name]: product.desc });
   return acc;
-}, {});
+}, []);
 
 console.log(productInfo);
 
@@ -19,12 +19,12 @@ function getNeedCardsCount() {
   }
   return count;
 }
-function renderCards(cards) {
+function renderCards(products) {
   productList.innerHTML = "";
-  cards.forEach(product => {
+  products.forEach(product => {
     const productClone = productTemplate.content.cloneNode(true);
     const imgCard = productClone.querySelector(".product-card__img");
-    imgCard.src = product.img.src;
+    imgCard.src = `img/${product.img.name}.png`;
     imgCard.alt = product.img.alt;
     imgCard.width = product.img.width;
     imgCard.height = product.img.height;
@@ -49,4 +49,6 @@ function renderCards(cards) {
   });
 }
 const count = getNeedCardsCount();
-renderCards(products.slice(0, count));
+const shownCards = products.slice(0, count);
+
+renderCards(shownCards);

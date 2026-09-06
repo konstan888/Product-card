@@ -1,7 +1,7 @@
 export const products = [
   {
     img: {
-      src: "img/moisturizing-mousse.png",
+      name: "moisturizing-mousse",
       alt: "Увлажняющий мусс",
       width: 290,
       height: 290
@@ -18,7 +18,7 @@ export const products = [
   },
   {
     img: {
-      src: "img/moisturizing-mask.png",
+      name: "moisturizing-mask",
       alt: "Увлажняющая маска",
       width: 290,
       height: 290
@@ -35,7 +35,7 @@ export const products = [
   },
   {
     img: {
-      src: "img/cleansing-gel.png",
+      name: "cleansing-gel",
       alt: "Гель для умывания",
       width: 290,
       height: 290, 
@@ -52,7 +52,7 @@ export const products = [
   },
   {
     img: {
-      src: "img/gift-set-1.png",
+      name: "gift-set-1",
       alt: "Подарочный набор №1",
       width: 290,
       height: 290
@@ -69,7 +69,7 @@ export const products = [
   },
   {
     img: {
-      src: "img/gift-set-5.png",
+      name: "gift-set-5",
       alt: "Подарочный набор №5",
       width: 290,
       height: 290
