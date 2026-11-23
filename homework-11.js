@@ -1,26 +1,18 @@
+import { Modal } from './Modal.js';
+import { Form } from './Form.js';
+
+const regModal = new Modal('reg-modal');
+
+const registrationForm = new Form('reg-form');
+const subscribeForm = new Form('email-form');
+
 let user = null;
 
-const regForm = document.querySelector('#reg-form');
-const emailForm = document.querySelector('#email-form');
-
-const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const openBtn = document.querySelector('.header__registration-btn');
-const closeBtn = document.querySelector('.modal__close-btn');
 
-
-function openModal() {
-  modal.classList.add('modal-showed');
-  overlay.classList.add('overlay-showed');
-}
-
-function closeModal() {
-  modal.classList.remove('modal-showed');
-  overlay.classList.remove('overlay-showed');
-}
-
-const passwordInput = regForm.elements.password;
-const confirmPasswordInput = regForm.elements.confirm_password;
+const passwordInput = registrationForm.form.elements.password;
+const confirmPasswordInput = registrationForm.form.elements.confirm_password;
 
 function resetConfirmPasswordError() {
   confirmPasswordInput.setCustomValidity('');
@@ -33,7 +25,7 @@ function handleRegFormSubmit(event) {
 
   form.elements.confirm_password.setCustomValidity('');
 
-  if (!form.checkValidity()) {
+  if (!registrationForm.isValid()) {
     form.reportValidity();
     return;
   }
@@ -47,11 +39,11 @@ function handleRegFormSubmit(event) {
     return;
   }
 
-  const data = Object.fromEntries(new FormData(form).entries());
+  const data = registrationForm.getFormValues();
 
   data.password = btoa(data.password);
-  data.confirm_password = btoa(data.confirm_password)
-  
+  data.confirm_password = btoa(data.confirm_password);
+
   user = {
     ...data,
     createdOn: new Date(),
@@ -59,8 +51,8 @@ function handleRegFormSubmit(event) {
 
   console.table(user);
 
-  closeModal();
-  form.reset();
+  regModal.close();
+  registrationForm.resetForm();
 }
 
 function handleEmailFormSubmit(event) {
@@ -68,23 +60,27 @@ function handleEmailFormSubmit(event) {
 
   const form = event.currentTarget;
 
-  if (!form.checkValidity()) {
+  if (!subscribeForm.isValid()) {
     form.reportValidity();
     return;
   }
 
-  const data = Object.fromEntries(new FormData(form).entries());
+  const data = subscribeForm.getFormValues();;
   console.log(data);
 
-  form.reset();
+  subscribeForm.resetForm();
 }
 
-regForm.addEventListener('submit', handleRegFormSubmit);
-emailForm.addEventListener('submit', handleEmailFormSubmit);
+registrationForm.form.addEventListener('submit', handleRegFormSubmit);
+subscribeForm.form.addEventListener('submit', handleEmailFormSubmit);
 
-openBtn.addEventListener('click', openModal);
-overlay.addEventListener('click', closeModal);
-closeBtn.addEventListener('click', closeModal);
+openBtn.addEventListener('click', () => {
+  regModal.open();
+});
+
+overlay.addEventListener('click', () => {
+  regModal.close();
+});
 
 passwordInput.addEventListener('input', resetConfirmPasswordError);
 confirmPasswordInput.addEventListener('input', resetConfirmPasswordError);
